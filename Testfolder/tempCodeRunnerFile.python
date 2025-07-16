@@ -1,0 +1,11 @@
+from bs4 import BeautifulSoup
+import requests
+import pandas as pd
+
+url = "https://www.wayfair.com/furniture/sb0/sofas-c413892.html?prefetch=true"
+
+HEADERS = ({'User-Agent' : 'Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/137.0.0.0 Safari/537.36', 'Accept-Language': 'en-US, en;q=0.5',})
+
+webpage = requests.get(url, headers=HEADERS)
+
+webpage.raise_for_status()  # Check if the request was successful
